@@ -11,8 +11,7 @@ formData.addEventListener("submit", (e) => {
 
   e.preventDefault();
   const location = search.value;
-  console.log("location", location);
-  fetch("http://localhost:3001/weather?address=" + location).then(
+  fetch("/weather?address=" + location).then(
     (response) => {
       response.json().then((data) => {
         if (data.errorMessage || data.error) {
